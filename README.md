@@ -34,3 +34,6 @@ All media licenses and source links are in `THIRD_PARTY.md`. The cabin photograp
 
 
 Update: the cabin now uses real licensed filmed footage from a 4K original, self-hosted at1080p. Flight chapters keep one continuous playhead across idle playback and scroll; `npm test` covers the regression. See QA_REPORT.md for current media limitations.
+
+
+Takeoff update: a genuinely different filmed Gulfstream G-III takeoff from an original4K NASA Armstrong clip now replaces the earlier soft telephoto source. The site serves1080p desktop and720p mobile derivatives. See THIRD_PARTY.md for attribution and editorial changes; header and final dusk scene are preserved.

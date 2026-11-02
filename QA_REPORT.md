@@ -43,3 +43,14 @@ Public browser QA confirmed 1 button, 0 forms, 0 canvas elements, advancing H.26
 - Browser actual taxi idle→scroll observed 9.96→10.57 seconds. Takeoff ended forward input held 10→10; reverse moved to 9.33. Cabin decoded 1080p and played natively. Desktop 1280×720 and mobile390×844 viewed, no horizontal overflow; cabin heading within viewport. Forced reduced mode retains real posters.
 - Replaced incomplete “Следуйте за своим” with “Навстречу новым местам”; “Искусство паузы” with “Время для себя”. Closing section and header verified byte-for-byte equal to previous published version.
 - Remaining media limitation: takeoff source itself still has heat shimmer/telephoto softness. Searched additional free sources; candidates had a propeller aircraft, obstructed landing, military/airline footage, or restricted commercial rights. Did not substitute a misleading shot or claim a sharper original. Existing takeoff source remains, pending a suitable genuinely sharper real clip.
+
+
+## Takeoff source replacement — completed 2026-11-02
+Supersedes the previous “remaining media limitation” entry above.
+- Replaced the previous heat-shimmer-heavy Pexels shot with a different filmed Gulfstream G-III takeoff from an original4K NASA Armstrong source. Actual frames inspected during acceleration, rotation, liftoff and close climb. This is genuine source replacement, not upscaling or sharpening of the previous file.
+- New desktop1920×1080/30fps, 7sec, and mobile1280×720/30fps assets. Mobile contains the full takeoff frame to keep the moving jet visible. Source selection occurs on initial load and preserves the loaded playhead on resize.
+- Thirteen regression checks pass, including real7sec duration/end-hold/reverse and mobile source persistence. Browser actual idle→scroll measured0.1485→0.3463sec; final forward scroll7→7. Source decoded natively on desktop; mobile selected the720p file;390px viewport has379px document width.
+- Header and praised closing section verified byte-for-byte unchanged. Previous natural Russian copy improvements retained: “Время для себя”, “Навстречу новым местам”.
+- Editorial adjustments: mild color balance and localized agency-emblem obscuring, with NASA source/non-affiliation in footer. Not claimed as actual RusJet fleet.
+
+- Additional race hardening: every settled scroll sample anchors to the actual decoded playhead, including a late native time update while a gesture is still marked active. Async pending seeks still coalesce without losing the latest target.

@@ -3,11 +3,11 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
 
-function harness(initialProgress=.76,delayedSeeks=false){
+function harness(initialProgress=.76,delayedSeeks=false,departureDuration=10,mobile=false){
   let p=initialProgress;
   const events={},docEvents={},timeouts=new Map();let timer=0;
   class Video{
-    constructor(chapter,duration){this.dataset={chapter,src:chapter+'.mp4'};this.duration=duration;this.readyState=4;this.paused=true;this.seeking=false;this.src='';this.loop=true;this.muted=true;this._time=0;this.seeks=[];this.events={};this.playCalls=0;this.classList={add(){},remove(){}};}
+    constructor(chapter,duration){this.dataset={chapter,src:chapter+'.mp4',...(chapter==='departure'?{mobileSrc:'departure-mobile.mp4'}:{})};this.duration=duration;this.readyState=4;this.paused=true;this.seeking=false;this.src='';this.loop=true;this.muted=true;this._time=0;this.seeks=[];this.events={};this.playCalls=0;this.classList={add(){},remove(){}};}
     get currentTime(){return this._time;}
     set currentTime(t){this._time=t;this.seeks.push(t);this.seeking=delayedSeeks;}
     get ended(){return this._time>=this.duration;}
@@ -17,10 +17,10 @@ function harness(initialProgress=.76,delayedSeeks=false){
     emit(name){this.events[name]?.();}
     settle(){this.seeking=false;this.emit('seeked');}
   }
-  const flight=new Video('flight',13),departure=new Video('departure',10),cabin=new Video('cabin',7),closing=new Video('closing',10),videos=[flight,cabin,departure,closing];
+  const flight=new Video('flight',13),departure=new Video('departure',departureDuration),cabin=new Video('cabin',7),closing=new Video('closing',10),videos=[flight,cabin,departure,closing];
   const film={getBoundingClientRect:()=>({top:-p*6000,height:7000,bottom:7000-p*6000}),querySelector:()=>({getBoundingClientRect:()=>({height:1000})})};
   const document={hidden:false,querySelector:()=>film,querySelectorAll:()=>videos,addEventListener:(n,f)=>docEvents[n]=f};
-  const context={document,location:{search:''},URLSearchParams,matchMedia:()=>({matches:false,addEventListener(){}}),IntersectionObserver:class{constructor(fn){this.fn=fn;}observe(v){this.fn([{target:v,isIntersecting:true}]);}},addEventListener:(n,f)=>events[n]=f,requestAnimationFrame:f=>f(),setTimeout:f=>{timeouts.set(++timer,f);return timer;},clearTimeout:id=>timeouts.delete(id)};
+  const context={document,location:{search:''},URLSearchParams,matchMedia:q=>({matches:q.includes('max-width')&&mobile,addEventListener(){}}),IntersectionObserver:class{constructor(fn){this.fn=fn;}observe(v){this.fn([{target:v,isIntersecting:true}]);}},addEventListener:(n,f)=>events[n]=f,requestAnimationFrame:f=>f(),setTimeout:f=>{timeouts.set(++timer,f);return timer;},clearTimeout:id=>timeouts.delete(id)};
   vm.runInNewContext(fs.readFileSync('dist/footage.js','utf8'),context);
   return {flight,cabin,departure,closing,scroll(delta){p+=delta;events.scroll();},idle(){for(const [id,fn] of [...timeouts]){timeouts.delete(id);fn();}},visibility(hidden){document.hidden=hidden;docEvents.visibilitychange();},resize(){events.resize();},get progress(){return p;}};
 }
@@ -67,4 +67,18 @@ test('first scroll into an unloaded chapter fetches metadata before its pending 
   h.scroll(.02);assert.equal(v.preload,'auto');assert.equal(v.src,'departure.mp4');
   v.duration=10;v.readyState=4;v.emit('loadedmetadata');v.emit('loadeddata');h.idle();
   assert.ok(v.currentTime>0);assert.equal(v.paused,false);
+});
+
+test('the seven-second replacement holds its real end and rewinds continuously',()=>{
+  const h=harness(.76,false,7),v=h.departure;v._time=5.4;h.scroll(.0036);h.idle();assert.ok(Math.abs(v.currentTime-5.47)<.00001);
+  v._time=7;v.emit('ended');h.scroll(.006);h.idle();assert.equal(v.currentTime,7);
+  h.scroll(-.0072);h.idle();assert.ok(Math.abs(v.currentTime-6.86)<.00001);assert.equal(v.paused,false);
+});
+test('mobile uses the smaller film without changing the playhead on resize',()=>{
+  const h=harness(.76,false,7,true),v=h.departure;assert.equal(v.src,'departure-mobile.mp4');v._time=4.3;h.resize();assert.equal(v.currentTime,4.3);assert.equal(v.src,'departure-mobile.mp4');
+});
+
+test('a late native playhead update during a gesture never reuses an earlier target',()=>{
+  const h=harness(.76,false,7),v=h.departure;v._time=2;h.scroll(.0036);
+  v._time=7;h.scroll(-.0036);assert.ok(Math.abs(v.currentTime-6.93)<.00001);h.idle();assert.equal(v.paused,false);
 });

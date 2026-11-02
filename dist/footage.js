@@ -20,12 +20,13 @@
     if(chapter==='closing')return visible.has(video);
     const [start,end]=ranges[chapter];return p>=start&&p<=end&&inFilm;
   }
+  const source=video=>matchMedia('(max-width: 760px)').matches&&video.dataset.mobileSrc?video.dataset.mobileSrc:video.dataset.src;
   const durationReady=video=>Number.isFinite(video.duration)&&video.duration>0;
   function paint(video){if(video.readyState>=2)video.classList.add('is-playing');}
   function play(video){
     const state=states.get(video);
     if(!allowed()||!visible.has(video)||!chapterActive(video)){video.pause();return;}
-    if(!video.src){video.preload='auto';video.src=video.dataset.src;}
+    if(!video.src){video.preload='auto';video.src=source(video);}
     if(state&&(state.scrubbing||state.pending||video.seeking)){state.resumeWanted=true;return;}
     paint(video);
     // Calling play() on an ended video restarts it. Flight chapters instead hold their last frame.
@@ -74,10 +75,10 @@
         video.pause();state.scrubbing=false;state.resumeWanted=false;continue;
       }
       if(Math.abs(delta)<.000001)continue;
-      if(!video.src){video.preload='auto';video.src=video.dataset.src;}
-      // At the start of each gesture, anchor to the frame native playback actually reached.
+      if(!video.src){video.preload='auto';video.src=source(video);}
+      // Anchor every settled sample to the frame the decoder actually reached.
       // During a seek, keep the latest queued target rather than an older decoded frame.
-      if(!state.scrubbing&&!state.pending&&!video.seeking)state.target=video.currentTime||0;
+      if(!state.pending&&!video.seeking)state.target=video.currentTime||0;
       state.scrubbing=true;state.resumeWanted=false;video.pause();
       if(durationReady(video)){state.target+=delta*video.duration;state.pending=true;}
       else state.pendingDelta+=delta;

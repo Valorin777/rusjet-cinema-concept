@@ -14,7 +14,7 @@ The Pexels license permits free website use and editing and prohibits implying e
 
 Source: https://commons.wikimedia.org/wiki/File:Dassault_Falcon_900EX_AN1409021.jpg
 Original transparent copy: https://upload.wikimedia.org/wikipedia/commons/0/02/Dassault_Falcon_900EX_AN1409021.jpg
-License: GNU Free Documentation License, Version 1.2 or any later version, with no invariant sections, front-cover texts or back-cover texts. Full license copy: `dist/assets/GFDL-1.3.txt`, https://www.gnu.org/licenses/fdl-1.3.txt . Wikimedia VRTS ticket 2012092710005647 confirms the photographer's permission. The visible site footer carries attribution and a license link. The image file is unchanged; responsive display and a separate CSS dark overlay do not alter the distributed original image.
+License: GNU Free Documentation License, Version 1.2 or any later version, with no invariant sections, front-cover texts or back-cover texts. Full license copy: `dist/assets/GFDL-1.3.txt`, https://www.gnu.org/licenses/fdl-1.3.txt . Wikimedia VRTS ticket 2012092710005647 confirms the photographer's permission. Attribution and the license copy are retained here for the unrendered historical file. The image file is unchanged; responsive display and a separate CSS dark overlay do not alter the distributed original image.
 
 ## Libraries and fonts
 
@@ -33,3 +33,13 @@ The simple text wordmark and abstract chevron are original concept treatments. R
 - Trim 0.3–7.3s, downsample to 1920×1080 H.264 CRF19, audio removed; poster extracted from the same film. Runtime files `assets/footage/cabin.mp4`, `cabin-poster.jpg`.
 - Actors shown in a staged stock scene. No claim they are RusJet customers or that the depicted cabin belongs to RusJet; no aircraft model identification asserted.
 - Supersedes the previous Falcon 900EX still on the visible website. Historic cabin still retained in repository with its existing license.
+
+
+## Replacement takeoff: NASA Armstrong Gulfstream G-III (2026-11-02)
+- Primary source: NASA Armstrong Flight Research Center, “NASA G-III Captures Heat Shield Data for Artemis II Mission”, recorded March 27, 2026. Identifier AFRC-2026-14584-01. Official archive: https://images.nasa.gov/search?media=image,video,audio&page=1&q=AFRC-2026-14584-01_NASA+G-III+Captures+Heat+Shield+Data+for+Artemis+II+Mission&yearEnd=2026&yearStart=1920 . Metadata is available via https://images-api.nasa.gov/search?q=Gulfstream&media_type=video .
+- The original 3840×2160 footage was sampled at 132–139s and downsampled to 1920×1080, 30fps H.264 CRF19, keyframes every10frames, without audio. A1280×720 CRF20 version is selected once on initial loading for mobile. No upscaling or AI aircraft generation.
+- The filmed aircraft is NASA's research Gulfstream G-III, registration N808NA. It is NOT identified as a RusJet fleet aircraft. The shot visibly contains acceleration, rotation, liftoff and climb, with actual changing perspective and camera tracking.
+- Localized agency-emblem obscuring and a mild color balance adjustment were applied. Aircraft shape, trajectory and scenery remain recorded footage. No identifiable people appear in the selected segment. No NASA logo is used as website branding.
+- NASA media usage guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/ ; advertising/non-endorsement guidance: https://www.nasa.gov/nasa-brand-center/advertising-guidelines/ . NASA-authored footage is generally not copyrighted in the US; agency identifiers and endorsements have separate restrictions. The selected derivative obscures the agency emblem, credits NASA as source in the footer, and explicitly disclaims NASA connection or endorsement. This is a factual source credit, not a claim of NASA approval.
+- Runtime: `takeoff-giii.mp4`, `takeoff-giii-mobile.mp4`, `takeoff-giii-poster.jpg`. The old Pexels takeoff file remains solely for compatibility with cached older pages; new HTML references only this replacement.
+- Preview candidates from Coverr, Videezy, Pixabay, NASA and DVIDS were inspected locally and are not published. No paid stock or private TikTok reference video was added.

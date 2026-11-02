@@ -28,3 +28,8 @@
 @media(max-width:760px){.cabin-video{object-position:62% 50%}.cabin-image{object-position:62% 50%}.departure h2{font-size:clamp(45px,10.6vw,80px)}}
 
 @media(max-width:760px){.cabin-video,.cabin-image{object-fit:contain;object-position:50% 52%;background:#151211}.cabin .cabin-shade{background:linear-gradient(180deg,#15121144,transparent 40%,transparent 65%,#0c0b0b99)}}
+
+/* Full real takeoff frame on phones; no poster/video ghost frame on decode. */
+.real-footage.scene-image{transition:none}
+.departure-video,.departure-image{object-position:100% 50%}
+@media(max-width:760px){.departure-video,.departure-image{object-fit:contain;object-position:50% 50%;background:#071018}}
