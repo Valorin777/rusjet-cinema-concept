@@ -1,36 +1,33 @@
 # RusJet — Выше ожиданий
 
-An independent Russian-language cinematic scroll website concept. Separate from FIELD / FORM and all other projects.
+Independent Russian-language cinematic scroll website concept. Separate from FIELD / FORM, LAST WIND and all other projects.
 
-Four scroll-directed scenes: an actual 3D trijet in blue-hour flight → sculpted window portal → warm cabin → an actual 3D runway takeoff, followed by a single booking CTA. No navigation, intermediate buttons, forms, analytics, or external runtime requests. All fonts, GSAP scripts and images are self-hosted.
+The current website uses **real licensed aircraft footage and a real Falcon 900EX cabin photograph**, following the user's request to replace the procedural 3D aircraft. Scroll seeks through the actual video; when scrolling stops, natural footage playback resumes. No drawn or generated aircraft appear in the current site. The original 3D prototype source remains in `src/aircraft.js` as an unused experiment / project history and is not imported or rendered.
 
 ## Run
 
-Requires Python 3 for the static preview. The Three.js production bundle is already built. Dependencies are already vendored in `dist/`; no install is required to view or host it.
+The site is plain static HTML/CSS/JavaScript. No install or build is needed to view or host `dist/`.
 
 ```sh
 python3 -m http.server 4317 --bind 127.0.0.1 --directory dist
 ```
 
-Open http://127.0.0.1:4317 . `npm run check` checks application JavaScript syntax. `npm ci --ignore-scripts` installs the source toolchain. After changing `src/aircraft.js`, run `npm run build` to produce the minified self-contained Three.js bundle. GSAP and fonts are vendored separately.
+`npm run check` validates both application scripts. `npm run build` performs the same static checks. No server, secret, paid service, tracker, form or API is needed.
 
-## Publish
+## Story
 
-GitHub Pages serves the `dist/` artifact via `.github/workflows/pages.yml` with no framework build, paid services, secrets or third-party runtime APIs. The `.nojekyll` file preserves plain static delivery. Research references and local QA screenshots are not deployed.
+Real business-jet taxi → expanding oval window → authentic Falcon 900EX cabin → real head-on takeoff → dusk aircraft and the single final CTA. GSAP / ScrollTrigger directs scene transitions and typography. The source clips are self-hosted, muted H.264 with frequent keyframes and fast-start metadata. Only the active chapter's video plays. Videos load as needed; reduced motion retains real stills and skips playback.
 
 ## Manager handoff
 
-`dist/app.js` has a single `managerUrl = null` setting. Set it to an approved HTTPS manager/chat URL after the contact is provided. At present the CTA updates a polite status message; it makes no submission and invents no contact.
+`dist/app.js` has `managerUrl = null`. Set this to an approved manager/chat HTTPS URL when supplied. The current button shows an honest contact-not-configured message and makes no submission.
 
-## Accessibility and performance
+## Attribution and factual limits
 
-- Native document scroll; no wheel/touch interception, scroll traps or custom cursor.
-- Reduced-motion system preference shows the same four scenes as static readable sections. The `?motion=reduce` preview parameter also selects this fallback for QA.
-- Without JavaScript or GSAP, static sections and the contact placeholder remain readable.
-- Three.js renders an original mesh aircraft with curved fuselage, swept airfoil wings, three engines with rotating fans, curved cockpit glass, cabin windows and retracting gear. GSAP / ScrollTrigger directs the typography and scene transitions. No paid services, trackers, video, autoplay audio, remote scripts or remote model dependencies.
-- The aircraft genuinely translates, banks and changes orientation. Camera perspective changes with scroll. Ambient flight motion continues at stationary scroll; runway lights move in 3D during takeoff. This is not a still-image displacement effect.
-- One transparent WebGL canvas is reused between flight and takeoff. Pixel ratio is capped (1.35 mobile / 1.65 desktop), mobile rendering is capped at 30 fps. Rendering stops offscreen, in background tabs and under reduced motion; no GPU renders are issued during the window/cabin segment. Devices without WebGL retain clearly illustrative image fallbacks.
-- Separate portrait flight and takeoff assets for mobile, local subset WOFF2 fonts, compressed JPEG images.
-- One keyboard-focusable CTA with visible focus and live status feedback.
+The site is explicitly an independent visual concept, not the official airline site. Stock planes and the archival cabin are not represented as RusJet fleet or its current equipment. No fleet counts, ownership, specifications, prices or destinations are invented. See `RESEARCH.md`.
 
-See `THIRD_PARTY.md` for licenses and `RESEARCH.md` for verified nomenclature and fleet-source limitations. Images are clearly labelled as AI illustrations of a design concept.
+All media licenses and source links are in `THIRD_PARTY.md`. The cabin photographer is credited in the visible footer, and the complete GFDL text is included in `dist/assets/GFDL-1.3.txt`. No footage or screenshots from the user's TikTok / Telegram reference are included.
+
+## GitHub Pages
+
+`.github/workflows/pages.yml` deploys `dist/` directly. Enable Pages with build type `workflow`, then push `main`. This project uses a new repository and does not modify another project. See `QA_REPORT.md` for verification status.

@@ -26,3 +26,8 @@ Secondary corroboration (not treated as primary verification):
 - https://www.aviaport.ru/aviafirms/1262/ describes the company's private and corporate aviation activities; it is a directory, not the airline itself.
 
 Therefore the public concept does **not** state fleet counts, exact aircraft registrations, ownership, destinations, performance numbers, safety claims, service guarantees, certifications, prices, or company history. It does not label the procedural 3D jet, generated fallback jet, or cabin as a factual Falcon 900EX EASy or actual RusJet equipment. Verified fleet details can be added when official material is accessible or supplied.
+
+
+## Real-footage revision
+
+The user subsequently requested genuine aircraft rather than drawn models. The current site uses licensed Pexels footage and an actual Falcon 900EX cabin photograph from Anton Bannikov's Commons collection: https://commons.wikimedia.org/wiki/File:Dassault_Falcon_900EX_AN1409021.jpg . The primary photo page confirms Falcon 900EX and F-HBDA at Vnukovo, JetExpo 2008; it does not establish EASy avionics or current RusJet fleet membership. The complete GFDL license and visible attribution are included. The originally generated aircraft and cabin images have been removed from the deployable directory; the original procedural 3D source is retained only as an unused prototype. See THIRD_PARTY.md for exact media origins and permitted use.

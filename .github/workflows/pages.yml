@@ -21,7 +21,7 @@ jobs:
       - name: Validate application JavaScript
         run: |
           node --check dist/app.js
-          node --check dist/aircraft.js
+          node --check dist/footage.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
