@@ -1,0 +1,20 @@
+{
+  "name": "rusjet-cinema-concept",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Independent cinematic scroll concept for RusJet",
+  "scripts": {
+    "dev": "python3 -m http.server 4317 --bind 127.0.0.1 --directory dist",
+    "check": "node --check dist/app.js && node --check dist/aircraft.js",
+    "build": "esbuild src/aircraft.js --bundle --format=esm --minify --outfile=dist/aircraft.js"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.8",
+    "@fontsource/manrope": "^5.2.6",
+    "gsap": "^3.13.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

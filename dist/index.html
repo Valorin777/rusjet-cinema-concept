@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071018">
+  <meta name="description" content="RusJet — независимый визуальный концепт частной авиации. Кинематографическое путешествие от закатного неба до личного пространства на борту.">
+  <meta property="og:title" content="RusJet — Выше ожиданий">
+  <meta property="og:description" content="Независимый дизайн-концепт. Путешествие начинается с одного движения.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/flight.jpg">
+  <title>RusJet — Выше ожиданий · Дизайн-концепт</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/flight.jpg" as="image" fetchpriority="high" media="(min-width: 761px)">
+  <link rel="preload" href="assets/flight-mobile.jpg" as="image" fetchpriority="high" media="(max-width: 760px)">
+  <link rel="preload" href="assets/fonts/manrope-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="app.js" defer></script>
+  <script type="module" src="aircraft.js"></script>
+</head>
+<body>
+  <header class="masthead" aria-label="RusJet">
+    <div class="wordmark" aria-label="RusJet">RUS<span>JET</span><svg viewBox="0 0 38 27" aria-hidden="true"><path d="M2 25 19 2l17 23M9 16h20"/></svg></div>
+    <div class="masthead-caption">ЧАСТНАЯ АВИАЦИЯ<span>ИСКУССТВО БЫТЬ В ПУТИ</span></div>
+    <div class="concept-label">НЕЗАВИСИМЫЙ КОНЦЕПТ <i></i></div>
+  </header>
+  <main>
+    <div class="film" id="film">
+      <div class="stage">
+        <section class="scene flight" aria-labelledby="flight-title">
+          <picture class="image-source"><source media="(max-width:760px)" srcset="assets/flight-mobile.jpg"><img class="scene-image flight-image" src="assets/flight.jpg" alt="Художественный образ серебристого бизнес-джета над облаками в закатном небе" width="1920" height="1080" fetchpriority="high"></picture>
+          <img class="scene-image flight-environment" src="assets/sky.jpg" alt="" aria-hidden="true" width="1100" height="1374"><div class="image-shade"></div>
+          <div class="flight-copy">
+            <p class="eyebrow"><span class="fine-line"></span> ВАШЕ НЕБО. ВАШ РИТМ.</p>
+            <h1 id="flight-title">Выше<br><span>ожиданий.</span></h1>
+          </div>
+          <div class="flight-note"><span>СВОБОДА ВЫБИРАТЬ</span><p>Куда лететь.<br>Когда отправляться.<br>Как чувствовать себя в пути.</p></div>
+          <div class="flight-bottom"><span>RUSJET / PRIVATE AVIATION</span><span class="scroll-hint">ЛИСТАЙТЕ, ЧТОБЫ ВЗЛЕТЕТЬ <b>↓</b></span><span>01 — ВЫСОТА</span></div>
+          <span class="horizon-mark" aria-hidden="true">+</span>
+        </section>
+        <section class="scene portal" aria-labelledby="portal-title">
+          <div class="portal-glow" aria-hidden="true"></div>
+          <p class="eyebrow portal-eyebrow">02 / МЕЖДУ НЕБОМ И ВАМИ</p>
+          <h2 id="portal-title" class="portal-left">Весь<br><em>мир.</em></h2>
+          <div class="window-shell" aria-hidden="true"><div class="window-bezel"><div class="window-glass"><img src="assets/sky.jpg" alt="" width="1100" height="1100" loading="eager"><div class="window-reflection"></div></div></div><span class="window-latch"></span></div>
+          <p class="portal-right">Только<br><em>ваш.</em></p>
+          <p class="portal-note">Между точкой отправления<br>и местом, где хочется быть, —<br>время для себя.</p>
+          <span class="portal-coordinate">R / J <i></i> A NEW PERSPECTIVE</span>
+        </section>
+        <section class="scene cabin" aria-labelledby="cabin-title">
+          <img class="scene-image cabin-image" src="assets/cabin.jpg" alt="Концептуальный интерьер частного самолёта: светлая кожа, ореховые панели и мягкое вечернее освещение" width="1920" height="1080" loading="eager">
+          <div class="cabin-shade"></div>
+          <div class="cabin-copy"><p class="eyebrow">03 / ЛИЧНОЕ ПРОСТРАНСТВО</p><h2 id="cabin-title">Искусство<br><em>паузы.</em></h2><p class="body-copy">Оставьте суету за бортом.<br>Впереди — только то, что важно вам.</p></div>
+          <div class="cabin-caption"><span>СВЕТ. ФАКТУРА. ТИШИНА.</span><p>Другое ощущение полёта.</p></div>
+          <div class="cabin-detail" aria-hidden="true">THE PRIVATE<br>STATE OF MIND <span>↗</span></div>
+        </section>
+        <section class="scene departure" aria-labelledby="departure-title">
+          <picture class="image-source"><source media="(max-width:760px)" srcset="assets/departure-mobile.jpg"><img class="scene-image departure-image" src="assets/departure.jpg" alt="Художественный кадр: частный самолёт отрывается от полосы на фоне оранжевого закатного солнца" width="1920" height="1080" loading="eager"></picture>
+          <img class="scene-image departure-environment" src="assets/runway.jpg" alt="" aria-hidden="true" width="1920" height="1080"><div class="departure-shade"></div>
+          <div class="departure-copy"><p class="eyebrow">04 / НОВЫЙ ГОРИЗОНТ</p><h2 id="departure-title">Следуйте<br><em>за своим.</em></h2></div>
+          <p class="departure-note">Не просто сменить место.<br>Сменить масштаб ощущений.</p>
+          <div class="departure-rule"><span>ПОЗВОЛЬТЕ СЕБЕ БОЛЬШЕ НЕБА</span><i></i><span>RUSJET</span></div>
+        </section>
+        <div class="film-grain" aria-hidden="true"></div>
+        <div class="film-meter" aria-hidden="true"><div class="meter-track"><i></i></div><span class="chapter-count">01 / 04</span></div>
+        <div class="chapter-caption" aria-hidden="true">ВЫСОТА</div>
+      </div>
+    </div>
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-orbit" aria-hidden="true"><span></span></div>
+      <p class="eyebrow">ВАША СЛЕДУЮЩАЯ ГЛАВА</p>
+      <h2 id="closing-title">Небо начинается<br><em>с вашего решения.</em></h2>
+      <p class="closing-copy">Выберите направление.<br>Остальное начинается с разговора.</p>
+      <button class="booking" type="button" aria-describedby="booking-status">Забронировать рейс <span aria-hidden="true">↗</span></button>
+      <p class="booking-status" id="booking-status" role="status" aria-live="polite">Контакт менеджера скоро появится.</p>
+      <div class="closing-signature" aria-hidden="true">RUSJET<span>BEYOND THE EXPECTED</span></div>
+    </section>
+  </main>
+  <footer>
+    <span>RUSJET · ВИЗУАЛЬНОЕ ИССЛЕДОВАНИЕ / 2026</span>
+    <p>Независимый дизайн-концепт. Не официальный сайт АО «РусДжет».<br>Изображения созданы с ИИ и не показывают реальный парк или салоны компании.</p>
+  </footer>
+  <noscript><style>.film{height:auto!important}.stage{height:auto!important;position:relative!important}.scene{position:relative!important;min-height:100svh;opacity:1!important;visibility:visible!important}.film-meter,.chapter-caption{display:none}</style></noscript>
+</body>
+</html>
