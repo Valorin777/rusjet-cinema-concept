@@ -25,3 +25,11 @@ License: GNU Free Documentation License, Version 1.2 or any later version, with 
 - FFmpeg is used only locally to prepare footage, not loaded or shipped to site visitors.
 
 The simple text wordmark and abstract chevron are original concept treatments. RusJet, Dassault, Falcon, Embraer and other names belong to their respective owners. No official affiliation, fleet ownership, or endorsement is claimed. No user reference video, music, private data, or paid stock media is included.
+
+
+## Cabin video added 2026-11-02
+- RDNE Stock project, “Business People in Private Jet”, Pexels 5778859: https://www.pexels.com/video/business-people-in-private-jet-5778859/
+- Original 3840×2160, 23.98fps real filmed stock, not CGI. Pexels free commercial-use license: https://www.pexels.com/license/
+- Trim 0.3–7.3s, downsample to 1920×1080 H.264 CRF19, audio removed; poster extracted from the same film. Runtime files `assets/footage/cabin.mp4`, `cabin-poster.jpg`.
+- Actors shown in a staged stock scene. No claim they are RusJet customers or that the depicted cabin belongs to RusJet; no aircraft model identification asserted.
+- Supersedes the previous Falcon 900EX still on the visible website. Historic cabin still retained in repository with its existing license.

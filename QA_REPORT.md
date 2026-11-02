@@ -33,3 +33,13 @@ The first attempt to create the public repository was denied before execution by
 Public URL: https://valorin777.github.io/rusjet-cinema-concept/ . Separate public repository: https://github.com/Valorin777/rusjet-cinema-concept . Automatic approval accepted the single retry on fresh user approval; the publication blocker is resolved. GitHub Pages workflow succeeded; HTTP 200 and actual browser video playback were verified on the public origin. Local and remote main SHAs matched at validation.
 
 Public browser QA confirmed 1 button, 0 forms, 0 canvas elements, advancing H.264 playback, inactive chapter videos paused/unloaded, real-photo cabin, no mobile horizontal overflow, and correct missing-manager feedback. The forced reduced-motion route had all four sections visible and no video sources loaded. Sixteen screenshots across 5.881 seconds capture the revised public site's real footage; the historical 3D GIF is superseded. Native Library artifacts for both the historical and current versions are recorded in the task handoff.
+
+
+## 2026-11-02 cabin film and continuity update
+- Replaced older still with actual licensed 4K-source cabin film, delivered 1080p; mobile uses full-frame letterboxing to retain the cabin rather than a crop of the wall.
+- One native playhead per flight chapter: scroll applies a relative delta anchored to the current playback time. Completed clips hold the last frame; reverse scroll may rewind. No implicit play-on-ended restart. Coalesced asynchronous seeks resume only once settled.
+- Fixed metadata loading when a user scrolls into an unloaded chapter; active footage now fetches metadata before pending seeks.
+- Ten Node regression checks pass: early/mid/late idle→scroll, repeated gestures, end hold, reverse, asynchronous seek coalescing, resize/visibility, cabin playhead, initial chapter metadata load.
+- Browser actual taxi idle→scroll observed 9.96→10.57 seconds. Takeoff ended forward input held 10→10; reverse moved to 9.33. Cabin decoded 1080p and played natively. Desktop 1280×720 and mobile390×844 viewed, no horizontal overflow; cabin heading within viewport. Forced reduced mode retains real posters.
+- Replaced incomplete “Следуйте за своим” with “Навстречу новым местам”; “Искусство паузы” with “Время для себя”. Closing section and header verified byte-for-byte equal to previous published version.
+- Remaining media limitation: takeoff source itself still has heat shimmer/telephoto softness. Searched additional free sources; candidates had a propeller aircraft, obstructed landing, military/airline footage, or restricted commercial rights. Did not substitute a misleading shot or claim a sharper original. Existing takeoff source remains, pending a suitable genuinely sharper real clip.

@@ -20,3 +20,11 @@
 .real-footage.scene-image{width:100%;min-width:0}
 
 .reduced .real-footage{display:none!important}
+
+/* Genuine cabin film follows the same camera framing as its poster. */
+.cabin-video{object-position:50% 50%;filter:brightness(.8) saturate(.75)}
+.cabin-shade{z-index:2;pointer-events:none}.cabin-copy,.cabin-caption,.cabin-detail{z-index:3}
+.departure h2{font-size:clamp(65px,7.3vw,138px)}
+@media(max-width:760px){.cabin-video{object-position:62% 50%}.cabin-image{object-position:62% 50%}.departure h2{font-size:clamp(45px,10.6vw,80px)}}
+
+@media(max-width:760px){.cabin-video,.cabin-image{object-fit:contain;object-position:50% 52%;background:#151211}.cabin .cabin-shade{background:linear-gradient(180deg,#15121144,transparent 40%,transparent 65%,#0c0b0b99)}}

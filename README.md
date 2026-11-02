@@ -31,3 +31,6 @@ All media licenses and source links are in `THIRD_PARTY.md`. The cabin photograp
 ## GitHub Pages
 
 `.github/workflows/pages.yml` deploys `dist/` directly. Enable Pages with build type `workflow`, then push `main`. This project uses a new repository and does not modify another project. See `QA_REPORT.md` for verification status.
+
+
+Update: the cabin now uses real licensed filmed footage from a 4K original, self-hosted at1080p. Flight chapters keep one continuous playhead across idle playback and scroll; `npm test` covers the regression. See QA_REPORT.md for current media limitations.

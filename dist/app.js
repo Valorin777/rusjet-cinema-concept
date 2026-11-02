@@ -76,7 +76,7 @@
     gsap.from('.closing .eyebrow,.closing h2,.closing-copy,.booking,.booking-status',{
       y:45,opacity:0,stagger:.12,duration:1.1,ease:'power2.out',scrollTrigger:{trigger:'.closing',start:'top 70%',once:true}
     });
-    // Aircraft motion is handled by the independent Three.js scene.
+    // Native real-footage playheads are coordinated by footage.js.
     return () => {root.classList.remove('motion');gsap.set('.scene',{clearProps:'all'});scenes.forEach(scene=>scene.removeAttribute('aria-hidden'));};
   });
   motionQuery.addEventListener('change', () => {
