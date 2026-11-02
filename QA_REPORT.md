@@ -26,3 +26,10 @@ The user-supplied TikTok https://vt.tiktok.com/ZSgooM2gd resolved to @webloved v
 ## Deployment authorization
 
 The first attempt to create the public repository was denied before execution by automatic approval review. Fresh explicit user voice evidence subsequently instructed public GitHub / GitHub Pages publication for RusJet. Only one retry of the previously denied publication is permitted on that new evidence; do not bypass a repeated denial. Current delivery state is recorded in the final handoff.
+
+
+## Delivery verification
+
+Public URL: https://valorin777.github.io/rusjet-cinema-concept/ . Separate public repository: https://github.com/Valorin777/rusjet-cinema-concept . Automatic approval accepted the single retry on fresh user approval; the publication blocker is resolved. GitHub Pages workflow succeeded; HTTP 200 and actual browser video playback were verified on the public origin. Local and remote main SHAs matched at validation.
+
+Public browser QA confirmed 1 button, 0 forms, 0 canvas elements, advancing H.264 playback, inactive chapter videos paused/unloaded, real-photo cabin, no mobile horizontal overflow, and correct missing-manager feedback. The forced reduced-motion route had all four sections visible and no video sources loaded. Sixteen screenshots across 5.881 seconds capture the revised public site's real footage; the historical 3D GIF is superseded. Native Library artifacts for both the historical and current versions are recorded in the task handoff.
