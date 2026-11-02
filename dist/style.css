@@ -17,3 +17,4 @@
 @media(prefers-reduced-motion:reduce){.real-footage{display:none!important}}
 /* Preserve the real aircraft across the full mobile frame instead of cropping its motion. */
 @media(max-width:760px){.flight-image,.flight-video{object-fit:contain;object-position:50% 52%;background:#071018}.flight .image-shade{background:linear-gradient(180deg,#07101811,transparent 40%,transparent 62%,#071018bb)}.flight-note{bottom:15%}}
+.real-footage.scene-image{width:100%;min-width:0}
