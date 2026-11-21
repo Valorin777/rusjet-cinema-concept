@@ -72,7 +72,7 @@
     gsap.to('.meter-track i',{scaleY:1,ease:'none',scrollTrigger:{trigger:'.film',start:'top top',end:'bottom bottom',scrub:true}});
     gsap.fromTo('.chapter-caption',{opacity:0},{opacity:1,scrollTrigger:{trigger:'.film',start:'top -30%',end:'top -55%',scrub:true}});
     gsap.from('.closing .eyebrow,.closing h2,.closing-copy,.booking,.booking-status',{
-      y:45,opacity:0,stagger:.12,duration:1.1,ease:'power2.out',scrollTrigger:{trigger:'.closing',start:'top 70%',once:true}
+      y:12,opacity:0,stagger:.12,duration:1.1,ease:'power2.out',scrollTrigger:{trigger:'.closing',start:'top 70%',once:true}
     });
     // Native real-footage playheads are coordinated by footage.js.
     return () => {
